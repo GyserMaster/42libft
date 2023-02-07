@@ -13,21 +13,27 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
+#include "ft_strlen.c"
 #include "ft_toupper.c"
 #include "ft_tolower.c"
 #include "ft_strchr.c"
 #include "ft_strrchr.c"
 #include "ft_strncmp.c"
-#include <ctype.h>
+#include "ft_strlcpy.c"
+#include "ft_strlcat.c"
+#include "ft_memchr.c"
+#include "ft_memcmp.c"
+#include "ft_calloc.c"
+#include "ft_strdup.c"
+
 int main(void)
 {
-    char str1[] = "To Debug-ging Test";
-    char str2[] = "To D";
-	int n = 5;
-    printf(">> %s | %s", str1, str2);
-    printf("\n>> %d", strncmp(str1, str2, n));
-    printf("\n>> %d", ft_strncmp(str1, str2, n));
-    printf("\n>> %s | %s", str1, str2);
+    char dst[] = "ABCDE";
+    char src[] = "ABCDEf";
+	int n = 2;
+    printf(">> %s | %s", dst, src);
+    printf("\n>> %d", ft_memcmp(dst, src, 0));
+    printf("\n>> %s | %s", dst, src);
     return (0);
-
 }
