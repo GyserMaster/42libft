@@ -12,7 +12,22 @@
 
 #include <stdlib.h>
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char *ft_substr(char const *str, unsigned int start, size_t len)
 {
+	char* sub;
+	int		i;
 
+	if (!(len))
+		return (NULL);
+	if (!(sub = malloc(sizeof(char) * (len + 1))))
+        return (NULL);
+	i = 0;
+	while (len-- && str[start] != '\0')
+	{
+		sub[i] = str[start];
+		i++;
+		start++;
+	}
+	sub[i] = '\0';
+	return(sub);
 }

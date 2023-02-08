@@ -11,29 +11,17 @@
 /* ************************************************************************** */
 
 
-#include <stdio.h>
-#include <string.h>
-#include <ctype.h>
-#include "ft_strlen.c"
-#include "ft_toupper.c"
-#include "ft_tolower.c"
-#include "ft_strchr.c"
-#include "ft_strrchr.c"
-#include "ft_strncmp.c"
-#include "ft_strlcpy.c"
-#include "ft_strlcat.c"
-#include "ft_memchr.c"
+#include "libft.h"
 #include "ft_memcmp.c"
-#include "ft_calloc.c"
-#include "ft_strdup.c"
-
+#include "EXTRA/ft_substr.c"
+#include "EXTRA/ft_strjoin.c"
 int main(void)
 {
     char dst[] = "ABCDE";
-    char src[] = "ABCDEf";
+    char src[] = "ABCDE";
 	int n = 2;
     printf(">> %s | %s", dst, src);
-    printf("\n>> %d", ft_memcmp(dst, src, 0));
+    printf("\n>> %s", ft_strjoin(dst, src));
     printf("\n>> %s | %s", dst, src);
     return (0);
 }
