@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spetrov <gyser.world@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/21 14:12:12 by spetrov           #+#    #+#             */
-/*   Updated: 2022/12/21 14:12:12 by spetrov          ###   ########.fr       */
+/*   Created: 2023/02/07 15:22:53 by spetrov           #+#    #+#             */
+/*   Updated: 2023/02/07 15:22:53 by spetrov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "ft_strlen.c"
-#include "c_in_str.c"
-#include "ft_memcmp.c"
-//EXTRA
-#include "ft_substr.c"
-#include "ft_strjoin.c"
-#include "ft_strtrim.c"
-#include "ft_split.c"
 
-int main(void)
+
+char *ft_strtrim(char const *s1, char const *set)
 {
-    char dst[] = "ABC?DEF?IJK?LMN";
-    char src[] = "E";
-	int n = 2;
-    printf(">> %s | %s", dst, src);
-    printf("\n>> %s", ft_split(dst, '?'));
-    printf("\n>> %s | %s", dst, src);
-    return (0);
+	char * sub;
+	int		i;
+	int		j;
+	int		x;
+
+	i = 0;
+	j = ft_strlen(s1) - 1;
+	while (c_in_str(s1[i], set))
+		i++;
+	while (c_in_str(s1[j], set))
+		j--;
+	if(!(sub = malloc(sizeof(char) * (j - i) + 1)))
+        return (NULL);
+	x = 0;
+	while (i <= j)
+		sub[x++] = s1[i++];
+	sub[x] = '\0';
+	return (sub);
 }

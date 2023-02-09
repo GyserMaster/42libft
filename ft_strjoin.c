@@ -10,16 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 char *ft_strjoin(char const *s1, char const *s2)
 {
 	char* sub;
 	int		i;
 	int		y;
-	if (!(s1) && !(s2))
+	if (!(s1) && !(s2) || (s1[0] == '\0' && s2[0] == '\0'))
 		return (NULL);
-	if (!(sub = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1))))
+	if (!(sub = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)) + 1)))
         return (NULL);
 	i = 0;
 	y = 0;
@@ -36,5 +36,4 @@ char *ft_strjoin(char const *s1, char const *s2)
 	}
 	sub[i] = '\0';
 	return (sub);
-	
 }

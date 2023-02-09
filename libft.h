@@ -17,6 +17,7 @@
 #include <ctype.h>
 //BASE
 int 	ft_strlen(const char *str);
+int		c_in_str(char c, char const *set);
 void    ft_bzero(void *s, size_t n);
 int 	ft_toupper(int c);
 int 	ft_tolower(int c);
