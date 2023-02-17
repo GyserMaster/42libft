@@ -1,16 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spetrov <gyser.world@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/07 15:27:12 by spetrov           #+#    #+#             */
-/*   Updated: 2023/02/07 15:27:12 by spetrov          ###   ########.fr       */
+/*   Created: 2023/02/07 15:28:02 by spetrov           #+#    #+#             */
+/*   Updated: 2023/02/07 15:28:02 by spetrov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_putstr_fd(char *s, int fd)
+#include "libft.h"
+
+void ft_putnbr_fd(int n, int fd)
 {
-	
+	char * buffer;
+
+	buffer = ft_itoa(n);
+	ft_putstr_fd(buffer, fd);
 }

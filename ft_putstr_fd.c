@@ -1,16 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spetrov <gyser.world@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/07 15:26:51 by spetrov           #+#    #+#             */
-/*   Updated: 2023/02/07 15:26:51 by spetrov          ###   ########.fr       */
+/*   Created: 2023/02/07 15:27:12 by spetrov           #+#    #+#             */
+/*   Updated: 2023/02/07 15:27:12 by spetrov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_putchar_fd(char c, int fd)
+#include "libft.h"
+
+void ft_putstr_fd(char *s, int fd)
 {
-	
+	while (*s)
+		ft_putchar_fd(*s++, fd);
 }
