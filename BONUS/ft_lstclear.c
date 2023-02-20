@@ -10,7 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void ft_lstclear(t_list **lst, void (*del)(void *))
 {
+	t_list	*buffer;
 
+	if (*lst)
+	{
+		while (*lst)
+		{
+			buffer = (*lst)->next;
+			ft_lstdelone(*lst, del);
+			*lst = buffer;
+		}
+		*lst = 0;
+	}
 }
