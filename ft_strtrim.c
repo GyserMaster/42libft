@@ -22,9 +22,9 @@ char *ft_strtrim(char const *s1, char const *set)
 
 	i = 0;
 	j = ft_strlen(s1) - 1;
-	while (c_in_str(s1[i], set))
+	while (ft_c_str(s1[i], set))
 		i++;
-	while (c_in_str(s1[j], set))
+	while (ft_c_str(s1[j], set))
 		j--;
 	if(!(sub = malloc(sizeof(char) * (j - i) + 1)))
         return (NULL);

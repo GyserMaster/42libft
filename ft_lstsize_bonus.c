@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spetrov <gyser.world@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/21 15:46:01 by spetrov           #+#    #+#             */
-/*   Updated: 2022/12/21 15:46:01 by spetrov          ###   ########.fr       */
+/*   Created: 2023/02/07 15:29:34 by spetrov           #+#    #+#             */
+/*   Updated: 2023/02/07 15:29:34 by spetrov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char * ft_strchr(char * str, int c)
+int ft_lstsize(t_list *lst)
 {
-	char aux;
+	int	size;
 
-	while (str[0] != c)
+	size = 0;
+	while (lst)
 	{
-		aux = str[0];
-		str++;
+		lst = lst->next;
+		size++;
 	}
-	if (aux == '\0')
-		return (0);
-	return (str);
+	return (size);
 }

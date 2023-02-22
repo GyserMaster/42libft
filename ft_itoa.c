@@ -11,7 +11,8 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-int	static	ft_count_dig(long n)
+
+static int	ft_count_dig(long n)
 {
 	int	i;
 

@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_c_count.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spetrov <gyser.world@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/21 15:46:01 by spetrov           #+#    #+#             */
-/*   Updated: 2022/12/21 15:46:01 by spetrov          ###   ########.fr       */
+/*   Created: 2023/02/22 14:52:31 by spetrov           #+#    #+#             */
+/*   Updated: 2023/02/22 14:52:31 by spetrov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char * ft_strchr(char * str, int c)
+size_t	ft_c_count(char c, char const *str)
 {
-	char aux;
+	size_t	i;
+	size_t	count;
 
-	while (str[0] != c)
+	i = 0;
+	count = 0;
+	while (str[i] != '\0')
 	{
-		aux = str[0];
-		str++;
+		if (str[i] == c)
+			count++;
+		i++;
 	}
-	if (aux == '\0')
-		return (0);
-	return (str);
+	return (count);
 }

@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   c_in_str.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spetrov <gyser.world@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/21 15:46:01 by spetrov           #+#    #+#             */
-/*   Updated: 2022/12/21 15:46:01 by spetrov          ###   ########.fr       */
+/*   Created: 2023/02/08 20:56:40 by spetrov           #+#    #+#             */
+/*   Updated: 2023/02/08 20:56:40 by spetrov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char * ft_strchr(char * str, int c)
+int	ft_c_str(char c, char const *set)
 {
-	char aux;
+	int	i;
 
-	while (str[0] != c)
+	i = 0;
+	while (set[i] != '\0')
 	{
-		aux = str[0];
-		str++;
+		if (set[i] == c)
+			return (1);
+		i++;
 	}
-	if (aux == '\0')
-		return (0);
-	return (str);
+	return (0);
 }

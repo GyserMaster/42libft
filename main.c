@@ -12,7 +12,8 @@
 
 #include "libft.h"
 #include "ft_strlen.c"
-#include "c_in_str.c"
+#include "ft_c_str.c"
+#include "ft_c_count.c"
 #include "ft_memcmp.c"
 #include "ft_strdup.c"
 //EXTRA
@@ -28,27 +29,24 @@
 #include "ft_putendl_fd.c"
 #include "ft_putnbr_fd.c"
 
-//BONUS
-#include "ft_lstnew.c"
-#include "ft_lstadd_front.c"
-
 char	mapi(unsigned int i, char c)
 {
 	return ('X');
 }
 int main(void)
 {
-    char dst[] = "ABC?DEF?GHI";
+    char dst[] = "hola";
     char src[] = "?";
 	unsigned int n = -2147483628;
 	t_list * buffer;
 	t_list ** array;
 
-	buffer = ft_lstnew("hola");
+	//buffer = ft_lstnew("hola");
 	//ft_lstadd_front(array, buffer);
     printf(">> %s | %s", dst, src);
-	printf("\n>> %s", buffer->content);
-	printf("\n>> %s", buffer->next);
+	//printf("\n>> %s", buffer->content);
+	//printf("\n>> %s", buffer->next);
+	printf("\n>> %s", ft_substr(dst, 0, 7));
     printf("\n>> %s | %s", dst, src);
     return (0);
 }

@@ -16,6 +16,8 @@ void ft_putnbr_fd(int n, int fd)
 {
 	char * buffer;
 
+	if(!(n))
+		return ;
 	buffer = ft_itoa(n);
 	ft_putstr_fd(buffer, fd);
 }

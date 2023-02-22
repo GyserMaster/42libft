@@ -28,7 +28,7 @@ int main(void)
     char dst[] = "ABC?DEF?GHI";
     char src[] = "?";
 	unsigned int n = -2147483628;
-	t_list * buffer;
+	t_list	*buffer;
 	
 	buffer = ft_lstnew("Hola");
 	printf("\n>> %s", buffer->content);
@@ -43,7 +43,7 @@ int main(void)
 	printf("\n>> 0x%p", buffer->next);
 
 	printf("\n>> Last = %s | %s", ft_lstlast(buffer)->content, ft_lstlast(buffer)->next);
-	ft_lstadd_back(&buffer, ft_lstnew("BACK-LAST"));
+	ft_lstadd_back(&buffer, ft_lstnew("ft_lstadd_back()"));
 	printf("\n>> Last = %s | %s", ft_lstlast(buffer)->content, ft_lstlast(buffer)->next);
 
 	//ft_lstdelone(buffer, del);
