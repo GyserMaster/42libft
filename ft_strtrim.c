@@ -12,10 +12,9 @@
 
 #include "libft.h"
 
-
 char *ft_strtrim(char const *s1, char const *set)
 {
-	char * sub;
+	char	*sub;
 	int		i;
 	int		j;
 	int		x;
@@ -27,7 +26,7 @@ char *ft_strtrim(char const *s1, char const *set)
 	while (ft_c_str(s1[j], set))
 		j--;
 	if(!(sub = malloc(sizeof(char) * (j - i) + 1)))
-        return (NULL);
+        return (0);
 	x = 0;
 	while (i <= j)
 		sub[x++] = s1[i++];
