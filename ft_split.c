@@ -10,81 +10,62 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
-static char	*get_buffer(char const *s, size_t start, size_t max)
+size_t	ft_count_words(const char *s, char c)
 {
-	char		*buffer;
-	size_t		index;
-
-	index = 0;
-	if (!(buffer = (char *)malloc(8 * (max - start + 1))))
-		return (NULL);
-	while (start < max)
-	{
-		buffer[index] = s[start];
-		start++;
-		index++;
-	}
-	buffer[index] = '\0';
-	return (buffer);
-}
-static char **ft_get_array_buffer(size_t size)
-{
-	char **buffer;
-
-	buffer = (char **)malloc(8 * (size + 1));
-	if (!(buffer))
-		return (NULL);
+	size_t	i;
+	size_t	size;
 	
-	return (buffer);
-}
-
-static char		**ft_malloc_error(char **result)
-{
-	size_t		idx2;
-
-	idx2 = 0;
-	while (result[idx2])
-	{
-		free(result[idx2]);
-		result[idx2] = NULL;
-		idx2++;
-	}
-	free(result);
-	return (NULL);
-}
-
-char **ft_split(char const *s, char c)
-{
-	char ** array;
-	size_t		i;
-	size_t		x;
-	size_t		start;
-
 	i = 0;
-	x = 0;
-	start = ft_strlen(s) - ft_c_count(c, s);
-	if (!(array = ft_get_array_buffer(start)))
-		return (NULL);
+	size = 0;
+	if (!(c))
+		return((size_t)1);
 	
 	while (s[i] != '\0')
 	{
 		if (s[i] != c)
-		{
-			start = i;
-			while (s[i] != c && s[i] != '\0')
-				i++;
-			array[x] = get_buffer(s, start, i);
-			if (!(array[x]))
-				return (ft_malloc_error(array));
-			x++;
-		}
-		else
-			i++;
+			size++;
+		i++;
 	}
-	array[x] = NULL;
-	//printf("\n>> x = %d", x);
+	return (size);
+}
+
+
+
+
+char **ft_split(char const *s, char c)
+{
+	char	**array;
+	size_t	size;
+	size_t	start;
+	size_t	end;
+	int		i;
+
+	if (!s)
+		return (NULL);
+	size = ft_count_words(s, c);
+	//printf("\n>> size = %d", size);
+	if (!(array = (char **)malloc(sizeof(char *) * (size + 1))))
+		return (NULL);
+	start = 0;
+	i = 0;
+	while (s[start] != '\0' && start <= size)
+	{
+		if (s[start] != c && s[start] != '\0') // "ABC?DEF"
+		{
+			end = start;
+			while (s[end] != c && s[end] != '\0')
+			{
+				end++;
+			}
+			//printf("\n>> start = %d | end = %d", start, end);
+			array[i] = ft_substr(s, start, end - start);
+			start = end; // 7 = 7
+			i++;
+		}
+		start++;
+	}
+	array[i] = NULL;
 	return (array);
 }

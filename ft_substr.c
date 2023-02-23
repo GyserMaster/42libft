@@ -24,27 +24,21 @@ char *ft_get_buffer(size_t len)
 }
 char *ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char		*sub;
-	size_t		i;
+	size_t	size;
+	char	*buffer;
 
 	if (!s)
 		return (NULL);
-	if (start > (unsigned)ft_strlen(s))
+	if ((unsigned)ft_strlen(s) < start)
 		return (ft_strdup(""));
-	if (len > (size_t)ft_strlen(s))
-		len = ft_strlen(s);
-	sub = malloc(len + 1);
-	if (!(sub))
+	size = ft_strlen(s + start);
+	if (size < len)
+		len = size;
+	buffer = malloc(len + 1);
+	if (!buffer)
 		return (NULL);
-	i = 0;
-	while (len-- && s[start] != '\0')
-	{
-		sub[i] = s[start];
-		i++;
-		start++;
-	}
-	sub[i] = '\0';
-	return(sub);
+	ft_strlcpy(buffer, s + start, len + 1);
+	return (buffer);
 }
 /*
 	size_t	out_len;

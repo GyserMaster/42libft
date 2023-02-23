@@ -10,8 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRCS			=	ft_atoi.c \
-				ft_bzero.c \
+SRCS			=	ft_bzero.c \
 				ft_c_str.c \
 				ft_c_count.c \
 				ft_calloc.c \
@@ -38,6 +37,7 @@ SRCS			=	ft_atoi.c \
 				ft_tolower.c \
 				ft_toupper.c \
 				ft_striteri.c \
+				ft_atoi.c \
 
 BSRCS	= ft_lstnew_bonus.c \
 		  ft_lstadd_front_bonus.c \

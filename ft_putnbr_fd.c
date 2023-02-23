@@ -14,10 +14,16 @@
 
 void ft_putnbr_fd(int n, int fd)
 {
-	char * buffer;
+	unsigned int	m;
 
-	if(!(n))
-		return ;
-	buffer = ft_itoa(n);
-	ft_putstr_fd(buffer, fd);
+	if (n < 0)
+	{
+		m = (unsigned int)(n * (-1));
+		ft_putchar_fd('-', fd);
+	}
+	else
+		m = (unsigned int)n;
+	if (m >= 10) //123 / 12 / 1 close
+		ft_putnbr_fd((int)(m / 10), fd); //12/ 1 /  1<10 -> ft_putchar_fd(1)CLOSE 
+	ft_putchar_fd((char)(m % 10 + '0'), fd); //3 / 2 
 }
