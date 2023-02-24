@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char *ft_get_buffer(size_t len)
+static char	*ft_get_buffer(size_t len)
 {
 	char	*buffer;
 
@@ -20,9 +20,9 @@ char *ft_get_buffer(size_t len)
 	if (!(buffer))
 		return (NULL);
 	return (buffer);
-	
 }
-char *ft_substr(char const *s, unsigned int start, size_t len)
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	size;
 	char	*buffer;
@@ -40,20 +40,3 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 	ft_strlcpy(buffer, s + start, len + 1);
 	return (buffer);
 }
-/*
-	size_t	out_len;
-	char	*out;
-
-	if (!s)
-		return (NULL);
-	if ((unsigned)ft_strlen(s) < start)
-		return (ft_strdup(""));
-	out_len = ft_strlen(s + start);
-	if (out_len < len)
-		len = out_len;
-	out = malloc(len + 1);
-	if (!out)
-		return (NULL);
-	ft_strlcpy(out, s + start, len + 1);
-	return (out);
-*/

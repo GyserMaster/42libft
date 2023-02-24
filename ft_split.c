@@ -12,60 +12,80 @@
 
 #include "libft.h"
 
-size_t	ft_count_words(const char *s, char c)
+static size_t	count_strs(char const *s, char c)
 {
 	size_t	i;
-	size_t	size;
-	
+	size_t	cnt;
+
 	i = 0;
-	size = 0;
-	if (!(c))
-		return((size_t)1);
-	
-	while (s[i] != '\0')
+	cnt = 0;
+	while (s[i])
 	{
-		if (s[i] != c)
-			size++;
-		i++;
+		if (s[i] == c)
+			i++;
+		else
+		{
+			while (s[i] && s[i] != c)
+				i++;
+			cnt++;
+		}
 	}
-	return (size);
+	return (cnt);
 }
 
+static void	free_array(char **array, size_t	i)
+{
+	size_t	j;
 
+	j = 0;
+	while (j < i)
+	{
+		free(array[j]);
+		j++;
+	}
+	free(array);
+}
 
+static char	**split_strs(char const *s, char c, char **array, size_t size)
+{
+	size_t	i;
+	size_t	split;
 
-char **ft_split(char const *s, char c)
+	i = 0;
+	while (i < size)
+	{
+		while (*s && *s == c)
+			s++;
+		split = 0;
+		while (s[split] && s[split] != c)
+			split++;
+		array[i] = (char *)malloc(sizeof(char) * (split + 1));
+		if (!array[i])
+		{
+			free_array(array, i);
+			return (NULL);
+		}
+		ft_strlcpy(array[i], s, split + 1);
+		s += split;
+		i++;
+	}
+	return (array);
+}
+
+char	**ft_split(char const *s, char c)
 {
 	char	**array;
 	size_t	size;
-	size_t	start;
-	size_t	end;
-	int		i;
 
 	if (!s)
 		return (NULL);
-	size = ft_count_words(s, c);
-	//printf("\n>> size = %d", size);
-	if (!(array = (char **)malloc(sizeof(char *) * (size + 1))))
+	size = count_strs(s, c);
+	array = (char **)malloc(sizeof(char *) * (size + 1));
+	if (!array)
 		return (NULL);
-	start = 0;
-	i = 0;
-	while (s[start] != '\0' && start <= size)
-	{
-		if (s[start] != c && s[start] != '\0') // "ABC?DEF"
-		{
-			end = start;
-			while (s[end] != c && s[end] != '\0')
-			{
-				end++;
-			}
-			//printf("\n>> start = %d | end = %d", start, end);
-			array[i] = ft_substr(s, start, end - start);
-			start = end; // 7 = 7
-			i++;
-		}
-		start++;
-	}
-	array[i] = NULL;
+	array = split_strs(s, c, array, size);
+	if (!array)
+		return (NULL);
+	array[size] = NULL;
 	return (array);
 }

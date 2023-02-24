@@ -17,6 +17,8 @@
 #include "ft_memcmp.c"
 #include "ft_strdup.c"
 #include "ft_strlcpy.c"
+#include "ft_strnstr.c"
+#include "ft_strncmp.c"
 //EXTRA
 #include "ft_substr.c"
 #include "ft_strjoin.c"
@@ -38,21 +40,14 @@ char	mapi(unsigned int i, char c)
 int main(void)
 {
     char dst[] = "?????ABC?DEF??";
-    char src[] = "?";
+    char src[] = "???";
 	int n = -2147483648;
 	t_list * buffer;
 	char ** array;
 
-	//buffer = ft_lstnew("hola");
-	//ft_lstadd_front(array, buffer);
     printf(">> %s | %s", dst, src);
-	//printf("\n>> %s", buffer->content);
-	//printf("\n>> %s", buffer->next);
-	array = ft_split(dst, '?');
-	printf("\n>> %s",array[0]);
-	printf("\n>> %s",array[1]);
-	printf("\n>> %s",array[2]);
-	//printf("\n>> %s",array[3]);
+	printf("\n>> %s", ft_itoa(0));
+
     printf("\n>> %s | %s", dst, src);
     return (0);
 }

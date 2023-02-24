@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	unsigned int	m;
 
@@ -23,7 +23,7 @@ void ft_putnbr_fd(int n, int fd)
 	}
 	else
 		m = (unsigned int)n;
-	if (m >= 10) //123 / 12 / 1 close
-		ft_putnbr_fd((int)(m / 10), fd); //12/ 1 /  1<10 -> ft_putchar_fd(1)CLOSE 
-	ft_putchar_fd((char)(m % 10 + '0'), fd); //3 / 2 
+	if (m >= 10)
+		ft_putnbr_fd((int)(m / 10), fd);
+	ft_putchar_fd((char)(m % 10 + '0'), fd);
 }

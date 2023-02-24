@@ -13,15 +13,15 @@
 #include "libft.h"
 
 //BONUS
-#include "ft_lstnew.c"
-#include "ft_lstadd_front.c"
-#include "ft_lstsize.c"
-#include "ft_lstlast.c"
-#include "ft_lstadd_back.c"
-#include "ft_lstdelone.c"
-#include "ft_lstclear.c"
-#include "ft_lstiter.c"
-#include "ft_lstmap.c"
+#include "ft_lstnew_bonus.c"
+#include "ft_lstadd_front_bonus.c"
+#include "ft_lstsize_bonus.c"
+#include "ft_lstlast_bonus.c"
+#include "ft_lstadd_back_bonus.c"
+#include "ft_lstdelone_bonus.c"
+#include "ft_lstclear_bonus.c"
+#include "ft_lstiter_bonus.c"
+#include "ft_lstmap_bonus.c"
 
 int main(void)
 {
@@ -51,26 +51,3 @@ int main(void)
     printf("\n>> --- DEBUG TEST ---");
     return (0);
 }
-
-/*
-// FT_SPLIT
-int main(void)
-{
-    char dst[] = "????ABC?DEF???IJK?LMN?sodifjsodifosjdof??";
-    char src[] = "?";
-	char **buffer;
-	int n = 6;
-    printf(">> %s | %s", dst, src);
-	buffer = ft_split(dst, '?');
-	while (n)
-	{
-		printf("\n>> %s", *buffer);
-		buffer++;
-		n--;
-	}
-	buffer = (void *)0;
-    //printf("\n>> %s", ft_split(dst, '?'));
-    printf("\n>> %s | %s", dst, src);
-    return (0);
-}
-*/
