@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spetrov <gyser.world@gmail.com>            +#+  +:+       +#+        */
+/*   By: spetrov <gyser.petrov.42@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 14:12:12 by spetrov           #+#    #+#             */
 /*   Updated: 2022/12/21 14:12:12 by spetrov          ###   ########.fr       */

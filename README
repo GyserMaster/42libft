@@ -1,2 +1,32 @@
-Last Errors:
-split, strstrim, strchr, strrchr, memcpy, memmove
+Primer proyecto de 42, recrear la biblioteca de C.
+
+DIR ./BONUS:
+	Solo para pruebas de las funciones bonus con su propio main, libft y Makefile.
+
+Personal functions:
+	ft_c_count.c
+	ft_c_str.c
+
+Last Errors (solved):
+	split, strstrim, strchr, strrchr, memcpy, memmove
+
+Francinette --strict errors:
+	lstmap
+
+Makefile:
+	EXAMPLE TO USE: [make] [make all] [make fclean] [make bonus] ...
+	SRC: lista de archivos fuente necesarios para construir la biblioteca libft.a.
+	BSRC: lista de archivos fuente necesarios para construir las funciones de bonificación de la biblioteca libft.a.
+	OBJ: lista de archivos objeto correspondientes a SRC.
+	BOBJ: lista de archivos objeto correspondientes a BSRC.
+	NAME: nombre del archivo de biblioteca de salida.
+	CC: compilador utilizado.
+	FLAGS: opciones de compilador utilizadas.
+	RM: comando utilizado para eliminar archivos.
+	$(NAME): regla de construcción principal para construir la biblioteca libft.a a partir de OBJ.
+
+	all: regla de construcción que construye la biblioteca libft.a y las funciones de bonificación.
+	clean: regla que elimina los archivos objeto.
+	fclean: regla que elimina los archivos objeto y la biblioteca libft.a.
+	re: regla que elimina los archivos objeto y la biblioteca libft.a, y luego reconstruye todo.
+	bonus: regla de construcción para construir las funciones de bonificación de la biblioteca libft.a.
